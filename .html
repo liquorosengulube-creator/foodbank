@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Groceries Offer</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background: #f5f5f5;
+    text-align: center;
+}
+
+.container {
+    max-width: 500px;
+    margin: auto;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 40px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+h1 {
+    color: #2ecc71;
+}
+
+.urgent {
+    color: red;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.timer {
+    font-size: 22px;
+    color: #e74c3c;
+    margin: 15px 0;
+}
+
+.btn {
+    display: inline-block;
+    padding: 15px 25px;
+    background: #2ecc71;
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background: #27ae60;
+}
+
+.social-proof {
+    font-size: 14px;
+    color: #555;
+    margin-top: 15px;
+}
+
+.spots {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.testimonials {
+    margin-top: 25px;
+    text-align: left;
+}
+
+.testimonial {
+    background: #fafafa;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.name {
+    font-weight: bold;
+    color: #2c3e50;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+    <h1>🎁 Get Free Groceries Today!</h1>
+
+    <p>We're giving away grocery vouchers to lucky users in your area.</p>
+
+    <p class="urgent">⚠️ Limited availability — almost full!</p>
+
+    <div class="timer" id="countdown">Loading...</div>
+
+    <p>Only <span class="spots" id="spots">12</span> spots left today!</p>
+
+    <a href="https://www.hiphi.site/2BDDLXHS/8PCTD1Z/?sub1=Venda1993" class="btn">
+        CLAIM YOUR GROCERIES NOW
+    </a>
+
+    <div class="social-proof">
+        ✅ 2,874 people claimed today<br>
+        ⭐ Rated 4.8/5 by users<br>
+        🔥 People are claiming this every minute!
+    </div>
+
+    <!-- Testimonials -->
+    <div class="testimonials">
+        <h3>💬 What People Are Saying:</h3>
+
+        <div class="testimonial">
+            <span class="name">Jessica M. – Texas</span><br>
+            "I received my grocery voucher the next day! This really helped with my weekly shopping."
+        </div>
+
+        <div class="testimonial">
+            <span class="name">David R. – California</span><br>
+            "Wasn't sure at first, but it actually works. Got my groceries covered this week!"
+        </div>
+
+        <div class="testimonial">
+            <span class="name">Ashley T. – Florida</span><br>
+            "Super easy process and legit. I saved so much money on groceries!"
+        </div>
+    </div>
+
+</div>
+
+<script>
+// Countdown Timer (5 minutes)
+var timeLeft = 300;
+
+var timer = setInterval(function() {
+    var minutes = Math.floor(timeLeft / 60);
+    var seconds = timeLeft % 60;
+
+    document.getElementById("countdown").innerHTML =
+        "⏳ Offer expires in " + minutes + "m " + seconds + "s";
+
+    timeLeft--;
+
+    if (timeLeft < 0) {
+        clearInterval(timer);
+        document.getElementById("countdown").innerHTML = "⚠️ Offer expired!";
+    }
+}, 1000);
+
+// Fake decreasing spots
+var spots = 12;
+setInterval(function(){
+    if(spots > 3){
+        spots--;
+        document.getElementById("spots").innerText = spots;
+    }
+}, 4000);
+</script>
+
+</body>
+</html>
